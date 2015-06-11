@@ -83,6 +83,8 @@ rollout projectModelLibrary "Model Library" width:200 height:360
 		if getFile.count > 0 then
 		(
 				getStatus = getSaveRequired = true
+				--if (getStatus = getSaveRequired = true) == true then
+				--can fix this
 				if getStatus == true then
 				( 
 					if querybox "The scene has been modified.\nDo you want to save your changes?" title:"3ds Max" beep:true then
