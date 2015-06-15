@@ -10,6 +10,8 @@ Main Folder
 	-SubFolder
 		-MaxFiles
 */
+(
+global theModelDir
 try(destroyDialog setupNewDirectory)catch()
 try(destroyDialog projectModelLibrary)catch()
 directorySettingsFile = (getDir #scripts + "\startup\PML_DirectorySetting.ini")
@@ -83,8 +85,6 @@ rollout projectModelLibrary "Model Library" width:200 height:360
 		if getFile.count > 0 then
 		(
 				getStatus = getSaveRequired = true
-				--if (getStatus = getSaveRequired = true) == true then
-				--can fix this
 				if getStatus == true then
 				( 
 					if querybox "The scene has been modified.\nDo you want to save your changes?" title:"3ds Max" beep:true then
@@ -115,4 +115,5 @@ if theModelDir == "" then
 else
 (
 	createDialog projectModelLibrary
+)
 )
